@@ -1,9 +1,13 @@
-<h1 align="center"> Projeto Pass.In ✨ </h1>
-Projeto feito durante a NLW Unite com a linguagem Java - Edição 2024
+<h1 align="center"> Projeto Pass.In ✅ </h1>
+Plataforma: Rocketseat
+<br><br>
+Bem-vindo ao Pass.In! Simplificando a gestão de participantes em eventos presenciais.
+
 
 # Sobre o projeto
 
-> O pass.in é uma aplicação de **gestão de participantes em eventos presenciais**.
+Feito com conhecimentos intermediários em Java e React, o Pass.In é uma solução intuitiva e eficiente para organizadores e participantes de eventos presenciais. Oferecendo uma plataforma completa, desde a criação até o check-in, o Pass.In torna o processo simples e seguro.
+
 > 
 - A ferramenta permite que o organizador cadastre um evento e abra uma página pública de inscrição.
 - Os participantes inscritos podem emitir uma credencial para check-in no dia do evento.
@@ -13,18 +17,12 @@ Projeto feito durante a NLW Unite com a linguagem Java - Edição 2024
 
 ### Requisitos funcionais
 
-- O organizador deve poder cadastrar um novo evento;
-- O organizador deve poder visualizar dados de um evento;
-- O organizador deve poder visualizar a lista de participantes;
-1. O participante deve poder se inscrever em um evento;
-- O participante deve poder visualizar seu crachá de inscrição;
-- O participante deve poder realizar check-in no evento;
+- O organizador pode cadastrar um novo evento, visualizar dados de um evento, visualizar a lista de participantes.
+- O participante pode se inscrever em um evento, visualizar seu crachá de inscrição e realizar check-in no evento.
 
 ### Regras de negócio
 
-- O participante só pode se inscrever em um evento uma única vez;
-- O participante só pode se inscrever em eventos com vagas disponíveis;
-- O participante só pode realizar check-in em um evento uma única vez;
+- O participante só pode se inscrever em um evento uma única vez, somente se houver vagas disponíveis e só faz um check-in em cada evento.
 
 ### Requisitos não-funcionais
 
@@ -35,3 +33,5 @@ Projeto feito durante a NLW Unite com a linguagem Java - Edição 2024
 - Java 17
 - Spring Boot
 - HyperSQL (DB)
+- Insomnia
+- React
