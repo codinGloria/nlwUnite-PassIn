@@ -29,3 +29,9 @@ Projeto feito durante a NLW Unite com a linguagem Java - Edição 2024
 ### Requisitos não-funcionais
 
 - O check-in no evento será realizado através de um QRCode;
+
+## Tecnologias
+
+- Java 17
+- Spring Boot
+- HyperSQL (DB)
