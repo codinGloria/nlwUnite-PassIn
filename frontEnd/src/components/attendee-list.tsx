@@ -7,17 +7,37 @@ import { Table } from "../components/table/table";
 import { TableHeader } from "./table/table-header";
 import { TableCell } from "./table/table-cell";
 import { TableRow } from "./table/table-row";
-import { ChangeEvent, useState } from "react";
-import { attendees } from "../data/attendees";
+import { ChangeEvent, useEffect, useState } from "react";
 
 dayjs.extend(relativeTime)
 dayjs.locale("pt-br")
+
+interface Attendee {
+  id: string
+  nome: string
+  email: string
+  createdAt: string
+  checkedInAt: string | null
+}
 
 export function AttendeeList() {
 
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(1)
+
+  const [total, setTotal] = useState(0)
+  const [attendees, setAttendees] = useState<Attendee[]>([])
+
   const totalPages = Math.ceil(attendees.length / 10)
+
+  useEffect(() => {
+    fetch(`http://localhost:8080/events/attendees/681e8f09-0314-47af-ac7c-1873723ea708?pageIndex=${page - 1}`)
+      .then(response => response.json())
+      .then(data => {
+        setAttendees(data.attendees)
+        setTotal(data.total)
+      })
+  }, [page])
 
   function onSearchInputChange(event: ChangeEvent<HTMLInputElement>){
     setSearch(event.target.value)
@@ -82,7 +102,10 @@ export function AttendeeList() {
                   </div>
                 </TableCell>
                 <TableCell>{dayjs().to(attendee.createdAt)}</TableCell>
-                <TableCell>{dayjs().to(attendee.checkedInAt)}</TableCell>
+                <TableCell>
+                  {attendee.checkedInAt === null 
+                  ?<span className="text-zinc-400">Não fez check-in</span>
+                  : dayjs().to(attendee.checkedInAt)}</TableCell>
                 <TableCell>
                   <IconButton transparent>
                     <MoreHorizontal className="size-4" />
@@ -95,7 +118,7 @@ export function AttendeeList() {
         <tfoot>
           <tr>
             <TableCell colSpan={3}>
-              Mostrando 10 de {attendees.length} itens
+              Mostrando {attendees.length} de {total} itens
             </TableCell>
             <TableCell  className="text-right" colSpan={3}>
               <div className="inline-flex items-center gap-8">

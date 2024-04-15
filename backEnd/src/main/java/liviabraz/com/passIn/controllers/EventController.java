@@ -22,12 +22,14 @@ public class EventController {
     private final AttendeeService attendeeService;
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins="http://localhost:5173")
     public ResponseEntity<EventResponseDTO> getEvent(@PathVariable String id){
         EventResponseDTO event = this.eventService.getEventDetail(id);
         return ResponseEntity.ok(event);
     }
 
     @PostMapping
+    @CrossOrigin(origins="http://localhost:5173")
     public ResponseEntity<EventIdDTO> createEvent(@RequestBody EventRequestDTO body, UriComponentsBuilder uriComponentsBuilder){
         EventIdDTO eventIdDTO = this.eventService.createEvent(body);
 
@@ -37,12 +39,14 @@ public class EventController {
     }
 
     @GetMapping("/attendees/{id}")
+    @CrossOrigin(origins="http://localhost:5173")
     public ResponseEntity<AttendeesListResponseDTO> getEventAttendees(@PathVariable String id){
         AttendeesListResponseDTO attendeesListResponse = this.attendeeService.getEventsAttendee(id);
         return ResponseEntity.ok(attendeesListResponse);
     }
 
     @PostMapping("/{eventId}/attendees")
+    @CrossOrigin(origins="http://localhost:5173")
     public ResponseEntity<AttendeeIdDTO> registerParticipant(@PathVariable String eventId, @RequestBody AttendeeRequestDTO body, UriComponentsBuilder uriComponentsBuilder){
         AttendeeIdDTO attendeeIdDTO = this.eventService.registerAttendeeOnEvent(eventId, body);
 
