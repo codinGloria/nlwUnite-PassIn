@@ -29,7 +29,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 6327
+SET FILES CHECK 21027
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -62,8 +62,24 @@ INSERT INTO EVENTS VALUES('26ea4b8a-5c81-4470-a4a5-1940627e3224','Rocketseat NLW
 INSERT INTO EVENTS VALUES('2fce3608-91c3-4e82-afdb-76ca4fa14497','Rocketseat NLW Unite 2.0','Aprenda v\u00e1rias tecnologias de forma gratuita!','rocketseat=nlw=unite=20',1)
 INSERT INTO EVENTS VALUES('681e8f09-0314-47af-ac7c-1873723ea708','Rocketseat NLW','Aprenda Java de forma gratuita!','rocketseat=nlw',500)
 INSERT INTO EVENTS VALUES('aea0ba83-49c3-41c4-b6b8-a2d64ed41596','Rocketseat NLW Unite 3.0','Aprenda v\u00e1rias tecnologias de forma gratuita!','rocketseat=nlw=unite=30',2)
-INSERT INTO ATTENDEES VALUES('3828ll','Livia Braz','liviafariabraz282@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708',NULL)
-INSERT INTO ATTENDEES VALUES('3e739be0-1dd7-4dde-ad14-ea5a21598482','Livia','teste123@gmail.com','aea0ba83-49c3-41c4-b6b8-a2d64ed41596','2024-04-07 23:54:12.659958')
-INSERT INTO ATTENDEES VALUES('d103aff8-76aa-4f53-b0b0-e2cd03e4b313','Livia Braz','teste@gmail.com','2fce3608-91c3-4e82-afdb-76ca4fa14497','2024-04-07 22:56:26.816218')
-INSERT INTO ATTENDEES VALUES('f987ebde-478f-4558-9b63-f58562c7b99b','Livia Braz','teste@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-07 22:51:09.025850')
+INSERT INTO ATTENDEES VALUES('00c8d928-86c4-49d7-8bbb-56d27d4871d4','Maur\u00edcio Santos','maur\u00edcio.santos@hotmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:08:38.983929')
+INSERT INTO ATTENDEES VALUES('029471e4-d15e-4444-8717-f61af7ee7868','Matheus Ogawa Oliveira','matheus.oliveira@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:09:38.861678')
+INSERT INTO ATTENDEES VALUES('03d8debe-03c4-46b0-8076-421816ad1c79','Pedro Henrique Oliveira','pedro.oliveira@yahoo.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:52:06.130496')
+INSERT INTO ATTENDEES VALUES('1bf7475d-1056-4c93-bbe0-36f57b585bbc','Carlos Eduardo Pereira','carlos.pereira@outlook.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:52:38.910210')
+INSERT INTO ATTENDEES VALUES('2368be02-567b-4fb2-bdc2-51c84f74914f','Luan Henrique Naves Felipe','luandhx@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:11:49.853470')
+INSERT INTO ATTENDEES VALUES('451fd9e4-4ba0-4d8a-9936-c6baf1ce2a81','Let\u00edcia Santos Ferreira','leticia.ferreira@outlook.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:08:05.240021')
+INSERT INTO ATTENDEES VALUES('4c1285da-b16e-40e4-98aa-3362d1259142','Lucas Ribeiro','lucas.ribeiro@yahoo.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:53:05.774107')
+INSERT INTO ATTENDEES VALUES('5817f610-df4d-4945-a25a-3188c8f487d3','Bruno Fernando Lima','bruno.lima@hotmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:07:00.853682')
+INSERT INTO ATTENDEES VALUES('5a230abc-85e4-4d4d-a1f4-1c4c1c6b8958','Maria Santos Nogueira','maria.nogueira@hotmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:51:46.911811')
+INSERT INTO ATTENDEES VALUES('5e019878-1eb5-4d7d-80ba-01431b9616cf','Isabela J\u00falia Barbosa','isabela.barbosa@yahoo.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:09:03.535316')
+INSERT INTO ATTENDEES VALUES('62f19e88-b75f-4a13-be6e-0679b6d65a22','Juanita Burke','juanita.burke@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:49:36.145809')
+INSERT INTO ATTENDEES VALUES('8ff7d03f-e79a-437b-9ce7-10f6c17262f8','L\u00edvia Faria Braz','liviafariabraz282@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:11:31.795066')
+INSERT INTO ATTENDEES VALUES('9473cb74-9490-44a5-be4f-3f4d4fb941cd','Ana Maria Costa','ana.costa@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:52:23.845886')
+INSERT INTO ATTENDEES VALUES('a00201cd-eee5-41dd-9113-d2b44c190573','Juliana Cristina Almeira','juliana.almeida@hotmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:52:53.160267')
+INSERT INTO ATTENDEES VALUES('a458d890-daf0-4987-9e3d-c938e84b5d6f','Daniel White','daniel.white@hotmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:50:00.855755')
+INSERT INTO ATTENDEES VALUES('b9198e7c-668f-4f32-8cb7-cf8e5240675b','Jo\u00e3o da Silva','joao.silva@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:51:22.268827')
+INSERT INTO ATTENDEES VALUES('c43e374e-a47a-4b40-9188-9e9e66ed91f7','Angelica Boyd','angelica.boyd@outlook.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:50:54.293821')
+INSERT INTO ATTENDEES VALUES('c859706d-194e-4708-9c9c-4e4b4be97d2e','Rafael Felipe Sousa','rafael.sousa@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:07:45.456276')
+INSERT INTO ATTENDEES VALUES('eec7062d-379d-4fd7-a240-4499cc2e9119','Fernanda Martins','fernanda.martins@gmail.com','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 08:53:23.692709')
+INSERT INTO ATTENDEES VALUES('fbeee758-261d-405f-a736-343811a7c39d','Camila Gon\u00e7alves','camila.goncalves@yahoo.comm','681e8f09-0314-47af-ac7c-1873723ea708','2024-04-16 09:07:20.335030')
 INSERT INTO CHECK_INS VALUES(0,'2024-04-07 23:40:00.503432','f987ebde-478f-4558-9b63-f58562c7b99b')

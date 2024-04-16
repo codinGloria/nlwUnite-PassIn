@@ -13,62 +13,73 @@ dayjs.extend(relativeTime)
 dayjs.locale("pt-br")
 
 interface Attendee {
-  id: string
-  nome: string
-  email: string
-  createdAt: string
-  checkedInAt: string | null
+  id: string;
+  nome: string;
+  email: string;
+  createdAt: string;
+  checkedInAt: string | null;
 }
 
 export function AttendeeList() {
 
-  const [search, setSearch] = useState('')
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(() =>{
+    const url = new URL(window.location.toString())
 
-  const [total, setTotal] = useState(0)
+    if(url.searchParams.has('page')){
+      return Number(url.searchParams.get('page'))
+    }
+
+    return 1
+  })
+
+  const [, setTotal] = useState(0)
   const [attendees, setAttendees] = useState<Attendee[]>([])
 
   const totalPages = Math.ceil(attendees.length / 10)
 
   useEffect(() => {
-    fetch(`http://localhost:8080/events/attendees/681e8f09-0314-47af-ac7c-1873723ea708?pageIndex=${page - 1}`)
-      .then(response => response.json())
-      .then(data => {
-        setAttendees(data.attendees)
-        setTotal(data.total)
-      })
-  }, [page])
+    const url = new URL(
+      "http://localhost:8080/events/attendees/681e8f09-0314-47af-ac7c-1873723ea708"
+    );
 
-  function onSearchInputChange(event: ChangeEvent<HTMLInputElement>){
-    setSearch(event.target.value)
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setAttendees(data.attendees);
+        setTotal(data.total);
+      });
+  }, [page]);
+
+  function setCurrentPage(page: number){
+    const url = new URL(window.location.toString())
+  
+    url.searchParams.set('page', String(page))
+
+    window.history.pushState({}, "", url)
+
+    setPage(page)
   }
 
   function goToNextPage(){
-    setPage(page + 1)
+    setCurrentPage(page + 1)
   }
 
   function goToPreviousPage(){
-    setPage(page - 1)
+    setCurrentPage(page - 1)
   }
 
   function goToLastPage(){
-    setPage(totalPages)
+    setCurrentPage(totalPages)
   }
 
   function goToFirstPage(){
-    setPage(1)
+    setCurrentPage(1)
   }
 
   return (
     <div className="flex flex-col gap-4">
       <div className="flex gap-3 items-center">
         <h1 className="text-2xl font-bold">Participantes</h1>
-        <div className="px-3 w-72 py-1.5 border border-white/10 rounded-lg text-sm flex items-center gap-3">
-          <Search className="size-4 text-emerald-300" />
-          <input onChange={onSearchInputChange} className="bg-transparent focus:ring-0 flex-1 outline-none border-0 p-0 text-sm" placeholder="Buscar participante..."/>
-        </div>
-
-        {search}
       </div>
 
       <Table>
@@ -118,7 +129,7 @@ export function AttendeeList() {
         <tfoot>
           <tr>
             <TableCell colSpan={3}>
-              Mostrando {attendees.length} de {total} itens
+              Mostrando 10 de {attendees.length} itens
             </TableCell>
             <TableCell  className="text-right" colSpan={3}>
               <div className="inline-flex items-center gap-8">
