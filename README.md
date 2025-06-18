@@ -1,4 +1,4 @@
-<h1 align="center"> Projeto Pass.In ✅ - STAND BY </h1>
+<h1 align="center"> Projeto Pass.In ✅</h1>
 Plataforma: Rocketseat
 <br><br>
 Bem-vindo ao Pass.In! Simplificando a gestão de participantes em eventos presenciais.
@@ -25,18 +25,6 @@ A API fornece os seguintes endpoints:
 - POST /events/{eventId}/attendees - Faz uma nova inscrição ao evento.
 - POST /attendees/{attendeeId}/badge - Retorna o cartão de inscrição do participante. 
 - POST /attendees/{attendeeId}/check-in - Faz o check-in no evento.
-
-## STANDY BY REASON
-  O projeto foi colocado em stand by pelos seguintes motivos:
-  
-- Tudo que foi passado durante a NLW está feito, portanto, pretendo adicionar mais algumas funcionalidades por conta própria.
-- O sistema parece meio incompleto, já que faço as requisições POST por Insomnia/Postman.
-- Funcionalidades que serão adicionadas:
-  - página para criar/inscrever eventos;
-  - acesso restrito da lista de participantes apenas a quem criou o evento;
-  - para participantes, lista de quais eventos estao disponíveis;
-  - filtro de buscar participantes/eventos;
-  - admin consiga alterar, remover ou fazer checkin dos usuarios (botaozinho de ...).
 
 ## Tecnologias
 
